@@ -1,4 +1,4 @@
-﻿
+﻿@model StudentGrievance.Models.Admin
 @{
     ViewBag.Title = "Dashboard";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -49,6 +49,24 @@
                                 <th></th>
                             </tr>
 
+                        </tbody>
+                        <tbody>
+                            @if (Model.lst != null)
+                            {
+                                if (Model.lst.Count > 0)
+                                {
+                                    foreach (var itm in Model.lst)
+                                    { 
+                                    <tr>
+                                        <td>@itm.ReferenceNumber</td>
+                                        <td>@itm.GrievanceDetails</td>
+                                        <td>@itm.GrievanceCategory</td>
+                                        <td>Pending</td>
+                                        <td></td>
+                                    </tr>
+                                    }
+                                }
+                            }
                         </tbody>
                     </table>
 

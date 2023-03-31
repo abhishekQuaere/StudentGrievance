@@ -17,7 +17,7 @@ namespace StudentGrievance.Controllers
         {
             Admin model = new Admin();
             model.lst = adminDB.GetAllGrivance<Admin>();
-            return View();
+            return View(model);
         }
     }
 }

@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="card-shadow-primary col-sm-12 card">
+        <div class="card-header">My Grievance List</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="body_txtReferenceNo" id="body_lblReferenceNo" class="col-sm-12">Reference No.</label>
+                        <div class="col-sm-12">
+                            <input name="ctl00$body$txtReferenceNo" type="text" autocomplete="off" id="body_txtReferenceNo" class="form-control" placeholder="-- leave blank to show all --">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="body_txtSubject" id="body_lblSubject" class="col-sm-12">Subject</label>
+                        <div class="col-sm-12">
+                            <input name="ctl00$body$txtSubject" type="text" autocomplete="off" id="body_txtSubject" class="form-control" placeholder="-- leave blank to show all --">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="body_BtnSearch" id="body_lblEntAdd" class="col-sm-12">&nbsp;</label>
+                        <div class="col-sm-12">
+                            <a id="body_BtnSearch" class="btn btn-primary btn-shadow" href="javascript:__doPostBack('ctl00$body$BtnSearch','')"><span class="fa fa-search"></span> Search</a>
+                            &nbsp;
+                            <a id="body_BtnShowAll" class="btn btn-primary btn-shadow" href="javascript:__doPostBack('ctl00$body$BtnShowAll','')"><span class="fa fa-list"></span> Show All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr class="table-primary">
+                                <th>Reference No.</th>
+                                <th>Subject</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

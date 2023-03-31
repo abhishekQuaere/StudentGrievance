@@ -1,0 +1,264 @@
+﻿@model StudentGrievance.Models.ComplainedStatus
+@{
+    ViewBag.Title = "ComplainetStatus";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    .space {
+        padding: 15px;
+    }
+
+    .stulog {
+        padding: 10px 5px;
+        background: #0776b9;
+        border-radius: 8px 8px 0px 0px;
+    }
+
+    .stulog1 {
+        padding: 10px 5px;
+        background: #28a745 !important;
+        border-radius: 8px 8px 0px 0px;
+    }
+
+    .stulog h3 {
+        margin-bottom: 2px;
+        padding: 10px 5px;
+        color: #fff;
+        font-size: 22px;
+    }
+
+    .stulog p {
+        margin-bottom: 0rem;
+        padding: 0px 5px;
+        color: #fff;
+    }
+
+    .stulog1 h3 {
+        margin-bottom: 2px;
+        padding: 10px 5px;
+        color: #fff;
+        font-size: 22px;
+    }
+
+    .stulog1 p {
+        margin-bottom: 0rem;
+        padding: 0px 5px;
+        color: #fff;
+    }
+    .d-main {
+        display: inline-grid;
+    }
+</style>
+
+<section class="section section-default border-0 mb-0 mt-0">
+    <div class="container py-3">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-12">
+
+                <div class="card" style="border-radius: 0px 0px 8px 8px;">
+                    <div class="stulog text-center">
+                        <h3>Online Grievance Redressal Form</h3>
+                        <p class="text-center">(ऑनलाइन शिकायत निवारण प्रपत्र)</p>
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div class="space">
+                            @using (Html.BeginForm("ComplainetStatus", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                <div class="row justify-content-center">
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="form-label">Complain Number</label>
+                                            @Html.TextBoxFor(x => x.ComplainetNo, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.ComplainetNo, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="form-label">Mobile Number</label>
+                                            @Html.TextBoxFor(x => x.mobile, new { @class = "form-control only-numeric" })
+                                            @Html.ValidationMessageFor(x => x.mobile, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Email Id</label>
+                                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="col-md-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value=""
+                            id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Remember me on this device
+                        </label>
+                    </div>
+                </div> -->
+
+                                    <div class="col-md-2 mt-2 text-center">
+                                        <button type="submit" class="btn btn-primary col-md-12" style="margin-top: 26px;">Search</button>
+                                    </div>
+
+                                    <!-- <div class="col-sm-12 mt-2 text-right">
+                    <a id="LnkForgotPassword" href="#" style="color: red;">Forgot password? Click here to recover.</a>
+                </div> -->
+
+
+                                </div>
+                            }
+                        </div>
+
+                   
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="stulog text-center">
+                        <h3>Complaint status</h3>
+                        <p class="text-center">(शिकायत की स्थिति)</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center" id="laterData">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Mobile Number</label>
+                                    @Html.TextBoxFor(x => x.mobile, new { @class = "form-control", @disabled = "disabled" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Email Id</label>
+                                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @disabled = "disabled" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">User Type</label>
+                                    @Html.DropDownListFor(m=>m.UserType, new List<SelectListItem>() { new SelectListItem { Text = "Institute", Value = "Institute" }, new SelectListItem { Text = "Existing Student", Value = "Existing Student" }
+                               , new SelectListItem { Text = "JEE Mains Candidate", Value = "JEE Mains Candidate" }
+                               , new SelectListItem { Text = "UPCET Candidate", Value = "UPCET Candidate" }
+                               , new SelectListItem { Text = "NATA Candidate", Value = "NATA Candidate" }
+                               , new SelectListItem { Text = "Other", Value = "Other" }
+                               }.Where(x=>x.Value==Model.UserType),new { @class="form-select",@disabled = "disabled"})
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Institute Code</label>
+                                    @Html.TextBoxFor(x => x.InstituteCode, new { @class = "form-control", @placeholder = "Enter Your Institute Code", @disabled = "disabled" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Applicant Name</label>
+                                    @Html.TextBoxFor(x => x.ApplicantName, new { @class = "form-control", @disabled = "disabled" })
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Grievance Category </label>
+                                    @Html.DropDownListFor(m => m.GrievanceCategory, new SelectList(ViewBag.GrivanceCategory, "value", "text").Where(x => x.Value == Model.GrievanceCategory), new { @class = "form-select", @disabled = "disabled" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Complaint date</label>
+                                    @Html.TextBoxFor(x => x.CreatedDate, new { @class = "form-control", @disabled = "disabled" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Reply Date</label>
+                                    @Html.TextBoxFor(x => x.ReplyDate, new { @class = "form-control", @disabled = "disabled" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Grievance Details </label>
+                                    <div class="form-floating">
+                                        @Html.TextAreaFor(x => x.GrievanceDetails, new { @class = "form-control", @placeholder = "Leave a comment here", @style = "height: 100px", @disabled = "disabled" })
+                                        <label for="GrievanceDetails">Comments</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Reply</label>
+                                    <div class="form-floating">
+                                        @Html.TextAreaFor(x => x.Reply, new { @class = "form-control", @placeholder = "Leave a comment here", @style = "height: 100px", @disabled = "disabled" })
+                                        <label for="GrievanceDetails">Reply</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group d-main">
+                                    <label class="form-label">Upload Document </label>
+                                    @Html.HiddenFor(m => m.UploadFile)
+                                    @Html.ValidationMessageFor(m => m.UploadFile, "", new { @class = "text-danger" })
+                                    @if (!String.IsNullOrEmpty(Model.UploadFile))
+                                    {
+                                        <a href="@Model.UploadFile.Replace(" ~", "")" target="_blank" class="btn btn-warning anchor"><i class="fa fa-download"></i></a>}
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Upload Document </label>
+                                @if (!String.IsNullOrEmpty(Model.ReplyDate))
+                                {
+                                    <input type="text" value="Pending" class = "form-control text-center" disabled />
+                                }
+                                else
+                                {
+                                    <input type="text" value="Success" class = "form-control text-center" disabled />
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    $(document).ready(function () {
+        if ('@Model.flag' == '1') {
+            $('#laterData').show();
+        }
+        else {
+            $('#laterData').hide();
+        }
+    })
+
+</script>
+

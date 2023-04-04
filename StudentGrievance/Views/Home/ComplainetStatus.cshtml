@@ -225,19 +225,19 @@
                                     @Html.ValidationMessageFor(m => m.UploadFile, "", new { @class = "text-danger" })
                                     @if (!String.IsNullOrEmpty(Model.UploadFile))
                                     {
-                                        <a href="@Model.UploadFile.Replace(" ~", "")" target="_blank" class="btn btn-warning anchor"><i class="fa fa-download"></i></a>}
+                                        <a href="@Model.UploadFile.Replace("~", "")" target="_blank" class="btn btn-warning anchor"><i class="fa fa-download"></i></a>}
                                 </div>
                             </div>
 
                             <div class="col-md-6">
-                                <label class="form-label">Upload Document </label>
+                                <label class="form-label">Complainet Status</label>
                                 @if (!String.IsNullOrEmpty(Model.ReplyDate))
                                 {
-                                    <input type="text" value="Pending" class = "form-control text-center" disabled />
+                                    <input type="text" value="Resolved" class = "form-control text-center" disabled />
                                 }
                                 else
                                 {
-                                    <input type="text" value="Success" class = "form-control text-center" disabled />
+                                    <input type="text" value="Pending" class = "form-control text-center" disabled />
                                 }
                             </div>
 

@@ -19,6 +19,7 @@ namespace StudentGrievance.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int RoleId { get; set; }
+        public int DeptId { get; set; }
         public bool HasFlaggingAuthority { get; set; }
     }
 }

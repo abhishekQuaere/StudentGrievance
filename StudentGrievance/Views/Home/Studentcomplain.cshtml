@@ -102,16 +102,8 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label">User Type</label>
-                                                <select class="form-select" aria-label="Default select example" name="UserType" id="UserType">
-                                                    <option selected="selected" value="">--Select--</option>
-                                                    <option value="Institute">Institute</option>
-                                                    <option value="Existing Student">Existing Student</option>
-                                                    <option value="JEE Mains Candidate">JEE Mains Candidate</option>
-                                                    <option value="UPCET Candidate">UPCET Candidate</option>
-                                                    <option value="NATA Candidate">NATA Candidate</option>
-                                                    <option value="Other">Other</option>
-                                                </select>
+                                                <label class="form-label">Deparment</label>
+                                                @Html.DropDownListFor(m => m.UserType, new SelectList(ViewBag.Department, "value", "text"), "--Select--", new { @class = "form-select" })
                                             </div>
                                         </div>
 

@@ -41,6 +41,12 @@ namespace PracticalEvaluation.DbRepository
             DynamicParameters dynamicParameters = new DynamicParameters();
             return _dapper.GetAll<SelectListItem>("Proc_GetGrievanceCategory", dynamicParameters);
         }
+        
+        public List<SelectListItem> GetDepartmentCategory()
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            return _dapper.GetAll<SelectListItem>("Proc_GetDepartmentCategory", dynamicParameters);
+        }
 
         public T CheckUserValidation<T>(Student obj)
         {

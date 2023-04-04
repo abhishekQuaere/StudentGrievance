@@ -40,9 +40,12 @@ namespace StudentGrievance.Models
         [RegularExpression(@"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", ErrorMessage = "Please enter valid Email ID.")]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "Please select Deparment")]
         public string UserType { get; set; }
         public string InstituteCode { get; set; }
         public string ApplicantName { get; set; }
+
+        [Required(ErrorMessage = "Please select Grievance Category")]
         public string GrievanceCategory { get; set; }
         public string File { get; set; }
         public string GrievanceDetails { get; set; }

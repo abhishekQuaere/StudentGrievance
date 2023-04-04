@@ -139,6 +139,9 @@
     <Compile Include="Models\SMS.cs" />
     <Compile Include="Models\StudentGrievance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilitis\ClientsideEncryption.cs" />
+    <Compile Include="Utilitis\RandomNumberGenerator.cs" />
+    <Compile Include="Utilitis\SessionManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

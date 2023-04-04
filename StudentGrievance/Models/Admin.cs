@@ -19,6 +19,7 @@ namespace StudentGrievance.Models
         public string UserType { get; set; }
         public string CreatedDate { get; set; }
         public string ReferenceNumber { get; set; }
+        public string status { get; set; }
         public List<Admin> lst { get; set; }
     }
 }

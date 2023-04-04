@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using PracticalEvaluation.DbRepository;
 using StudentGrievance.DbRepository;
 using StudentGrievance.Models;
+using StudentGrievance.Utilitis;
 
 namespace StudentGrievance.Controllers
 {
@@ -17,6 +18,7 @@ namespace StudentGrievance.Controllers
         CommonFileUpload com = new CommonFileUpload();
         AccountDb adb = new AccountDb();
         AdminDB admindb = new AdminDB();
+        SessionManager sm = new SessionManager();
 
         public ActionResult Index()
         {
@@ -54,8 +56,9 @@ namespace StudentGrievance.Controllers
 
         public ActionResult SendGrievanceOtp(Student model)
         {
-            model = adb.CheckUserValidation<Student>(model);
-            if (model.flag == 1)
+            Student obj = new Student();
+            obj = adb.CheckUserValidation<Student>(model);
+            if (obj.flag == 1)
             {
                 Random rnd = new Random();
                 string otp = (rnd.Next(100000, 999999)).ToString();
@@ -71,8 +74,8 @@ namespace StudentGrievance.Controllers
             }
             else
             {
-                TempData["msg"] = model.msg;
-                TempData["flag"] = model.flag;
+                TempData["msg"] = obj.msg;
+                TempData["flag"] = obj.flag;
                 return RedirectToAction("StudentGrievance");
             }
         }
@@ -95,6 +98,7 @@ namespace StudentGrievance.Controllers
             model.Email = Convert.ToString(Session["Email"]);
             model.mobile = Convert.ToString(Session["mobile"]);
             ViewBag.GrivanceCategory = adb.GetGrievanceCategory();
+            ViewBag.Department = adb.GetDepartmentCategory();
             return View(model);
         }
 
@@ -179,6 +183,7 @@ namespace StudentGrievance.Controllers
             model.Ip = CommonFileUpload.GetIPAddress();
             model = adb.InsertStudentGrivance<StudentGrievanceComplaint>(model);
             ViewBag.GrivanceCategory = adb.GetGrievanceCategory();
+            ViewBag.Department = adb.GetDepartmentCategory();
             TempData["msg"] = model.msg;
             TempData["flag"] = model.flag;
             return RedirectToAction("StudentGrievance");
@@ -213,6 +218,12 @@ namespace StudentGrievance.Controllers
             model = admindb.ValidateUserLogin<Authority>(model);
             if (model.ResponseCode == 0 && model.ResponseMessage == "Success")
             {
+                sm.UserId = model.Id;
+                sm.Name = model.Name;
+                sm.DeptId = model.DeptId;
+                sm.Loginid = model.LoginId;
+                sm.RollId = model.RoleId;
+
                 return RedirectToAction("Index", "Admin");
             }
             else

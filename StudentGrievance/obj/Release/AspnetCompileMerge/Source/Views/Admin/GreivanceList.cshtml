@@ -1,0 +1,157 @@
+﻿@model StudentGrievance.Models.Admin
+@{
+    ViewBag.Title = "GreivanceList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="card-shadow-primary col-sm-12 card">
+        <div class="card-header">My Grievance List</div>
+        <div class="card-body">
+            @*<div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="body_txtReferenceNo" id="body_lblReferenceNo" class="col-sm-12">Reference No.</label>
+                            <div class="col-sm-12">
+                                <input name="ctl00$body$txtReferenceNo" type="text" autocomplete="off" id="body_txtReferenceNo" class="form-control" placeholder="-- leave blank to show all --">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="body_txtSubject" id="body_lblSubject" class="col-sm-12">Subject</label>
+                            <div class="col-sm-12">
+                                <input name="ctl00$body$txtSubject" type="text" autocomplete="off" id="body_txtSubject" class="form-control" placeholder="-- leave blank to show all --">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="body_BtnSearch" id="body_lblEntAdd" class="col-sm-12">&nbsp;</label>
+                            <div class="col-sm-12">
+                                <a id="body_BtnSearch" class="btn btn-primary btn-shadow" href="javascript:__doPostBack('ctl00$body$BtnSearch','')"><span class="fa fa-search"></span> Search</a>
+                                &nbsp;
+                                <a id="body_BtnShowAll" class="btn btn-primary btn-shadow" href="javascript:__doPostBack('ctl00$body$BtnShowAll','')"><span class="fa fa-list"></span> Show All</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr class="table-primary">
+                                <th>Reference No.</th>
+                                <th>Subject</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </tbody>
+                        <tbody>
+                            @if (Model.lst != null)
+                            {
+                                if (Model.lst.Count > 0)
+                                {
+                                    foreach (var itm in Model.lst)
+                                    {
+                                        <tr>
+                                            <td>@itm.ReferenceNumber</td>
+                                            <td>@itm.GrievanceDetails</td>
+                                            <td>@itm.GrievanceCategory</td>
+                                            <td>@itm.status</td>
+                                            <td>
+                                                @if (String.IsNullOrEmpty(itm.Reply))
+                                                {
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="fillGrievanceId('@itm.GrivanceId')">Reply</button>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reply</h5>
+                <button type="button" class="close btnClose" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <textarea class="form-control" id="reply"></textarea>
+                <input type="hidden" id="greivanceId" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btnClose" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btnSend">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function fillGrievanceId(Id) {
+
+        $('#greivanceId').val(Id);
+
+    }
+
+    $('.btnSend').click(function () {
+        debugger;
+        var greivanceId = $('#greivanceId').val();
+        var reply = $('#reply').val();
+
+        $.ajax({
+            url: '@Url.Action("ReplyGreivance", "Admin")',
+            type: "POST",
+            data: { greivanceId: greivanceId, Reply: reply },
+            success: function (response) {
+                debugger;
+                if (response == 1) {
+                    $.confirm({
+                    title: '',
+                        content: 'Reply send successfully.',
+                    buttons: {
+                        Ok: function () {
+                            window.location.href = "@Url.Action("Index", "Admin")";
+                        }
+                    }
+                });
+                }
+                else {
+                    swal("", "Somthing went wrong !", "error");
+                }
+                return false;
+
+            },
+            error: function (e) {
+                debugger;
+            }
+        });
+
+    })
+
+    $('.btnClose').click(function () {
+
+        $('#exampleModal').modal("hide");
+        $('#greivanceId').val('');
+        $('#reply').val('');
+
+    })
+
+</script>
+

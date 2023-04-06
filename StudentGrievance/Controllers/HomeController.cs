@@ -233,5 +233,13 @@ namespace StudentGrievance.Controllers
             return View(model);
         }
 
+        public ActionResult LogOut()
+        {
+            Session.Abandon();
+            Session.Clear();
+            Session.RemoveAll();
+            return RedirectToAction("index","Home");
+        }
+
     }
 }

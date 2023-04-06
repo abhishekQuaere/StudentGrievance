@@ -1,0 +1,62 @@
+ 
+@media (max-width:1500px) {
+}
+
+@media (max-width:1366px) {
+}
+
+@media (max-width:1199px) {
+}
+
+@media (max-width:991px) {
+    .univ_name_eng {
+        font-size: 16px;
+        line-height: 18px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .univ_name_hin {
+        font-size: 19px;
+        line-height: 22px;
+        padding: 5px 0px;
+        margin: 0;
+    }
+
+    .univ_caption {
+        font-size: 11px;
+        line-height: 13px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .hlList2 ul li {
+        padding-top: 5px;
+        padding-left: 36px;
+        float: left;
+        width: 100%;
+    }
+
+    .mobileDisplaynone {
+        display: none !important
+    }
+}
+
+@media (max-width:767px) {
+}
+
+@media (max-width:575px) {
+}
+
+@media (max-width:480px) {
+     
+}
+
+@media (max-width:430px) {
+}
+
+@media (max-width:375px) {
+}
+
+@media (max-width:374px) {
+}

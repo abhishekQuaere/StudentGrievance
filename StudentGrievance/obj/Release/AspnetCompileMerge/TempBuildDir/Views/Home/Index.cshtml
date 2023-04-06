@@ -1,0 +1,484 @@
+﻿
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "Login";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mahatma Gandhi Kashi Vidyapith : Department</title>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="WebSite Template" />
+    <meta name="description" content="Mahatma Gandhi Kashi Vidyapith">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/mgkvp-logo.png">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <!-- Web Fonts  -->
+    <link id="googleFonts"
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400&display=swap"
+          rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;0,900;1,500&display=swap"
+          rel="stylesheet">
+    <!-- Vendor CSS -->
+    <link href="~/WebAssets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/WebAssets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/WebAssets/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/WebAssets/vendor/animate/animate.compat.css">
+    <link rel="stylesheet" href="~/WebAssets/vendor/simple-line-icons/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="~/WebAssets/vendor/owl.carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/WebAssets/vendor/owl.carousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/WebAssets/vendor/magnific-popup/magnific-popup.min.css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/WebAssets/css/theme.css">
+    <link rel="stylesheet" href="~/WebAssets/css/theme-elements.css">
+    <!-- Skin CSS -->
+    <link id="skinCSS" rel="stylesheet" href="~/WebAssets/css/skins/skin-corporate-8.css">
+    <!-- Theme Custom CSS -->
+    <link href="~/WebAssets/css/pribox.css" rel="stylesheet" />
+    <link href="~/WebAssets/css/gallery.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/WebAssets/css/department-style.css">
+    <link rel="stylesheet" href="~/WebAssets/css/custom.css">
+    <link rel="stylesheet" href="~/WebAssets/css/media.css">
+    <!-- Head Libs -->
+
+    <script src="vendor/modernizr/modernizr.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!--<script async src="https://cse.google.com/cse.js?cx=50174859a05733ccb"></script>-->
+    <style>
+        [image-overlay]:before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: rgb(7 51 78);
+            top: 0;
+            left: 0;
+            /* z-index: 1; */
+        }
+
+        [image-overlay="8"]:before {
+            opacity: 0.8;
+        }
+
+
+        .upper-part {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .head-title-eng {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .head-title-hindi {
+            font-weight: 700;
+            color: #fff;
+        }
+
+
+
+        .flip-card {
+            background-color: #00436a;
+            width: 100%;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        .flip-card-back {
+            background-color: #00436a;
+            color: white;
+            transform: rotateY(180deg);
+            transform: rotateY(180deg);
+            padding-top: 108px;
+        }
+
+        .inner-box {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            text-align: center;
+            background: #fff;
+            padding: 50px 20px 36px;
+            height: 300px;
+        }
+
+        .icon-box {
+            position: relative;
+            display: inline-block;
+            font-size: 100px;
+            line-height: 100px;
+            margin-bottom: 8px;
+            z-index: 1;
+            transition: all 500ms ease;
+        }
+
+        i.fa.fa-file-text {
+            color: #0776b9;
+        }
+
+        .fbold {
+            font-weight: bold;
+        }
+
+        section.pt-20 {
+            padding-top: 36px;
+        }
+
+
+        @@media only screen and (max-width: 600px) {
+
+            .flip-card {
+                margin-bottom: 10px;
+            }
+        }
+
+        .gsc-input {
+            background: none !important;
+        }
+
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .newsGroup {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .myTicker3 {
+            width: 100%;
+        }
+
+            .myTicker3 ul {
+                width: 100%;
+            }
+
+        .widget-item {
+            padding: 20px 20px;
+            background: #fff;
+            margin-bottom: 20px;
+            box-shadow: none;
+        }
+
+        .featured-boxes-modern-style-2-hover-only:hover .featured-box:before {
+            top: 2px;
+            right: 2px;
+            bottom: 2px;
+            left: 2px;
+        }
+
+        .featured-boxes-modern-style-primary .featured-box {
+            background: #ffc107;
+            background: linear-gradient(135deg, #ffc107 0%, #b17a0b 100%);
+        }
+
+        .box-content:hover {
+            color: #ffb100;
+        }
+
+        .tabs-vertical .nav-tabs .nav-link {
+            padding: 15px 20px;
+            line-height: 26px;
+            font-size: 14px;
+            background: #fff;
+        }
+
+        .tabs-left .nav-tabs > li .nav-link {
+            border-top: 1px solid #dadada;
+            border-bottom: 0px solid #dadada;
+        }
+
+        .tabs-navigation .nav-tabs > li .nav-link {
+            padding: 10px 20px;
+            line-height: 21px;
+        }
+
+        .featured-boxes-modern-style-2-hover-only:not(:hover) .featured-box-box-shadow {
+            box-shadow: none;
+        }
+
+        .tab-content {
+            border-radius: 0 0 4px 4px;
+            box-shadow: none;
+            background-color: transparent;
+            border: none;
+            border-top: 0;
+            padding: 15px;
+            clear: both;
+        }
+
+        .tabs-center .nav-tabs .nav-link {
+            padding: 5px 30px;
+            line-height: 35px;
+            font-size: 14px;
+            position: relative;
+            border: 1px solid #eeeeee !important;
+            background: #f3f3f3;
+            border-radius: 5px 5px 0 0 !important;
+        }
+
+            .tabs-center .nav-tabs .nav-link.active {
+                background: #00436a;
+                color: #fff !important;
+                border-top-color: #ffc300 !important;
+            }
+
+                .tabs-center .nav-tabs .nav-link.active::before {
+                    content: '';
+                    display: block;
+                    border-top: 9px solid #00436a;
+                    border-left: 9px solid transparent;
+                    border-bottom: 0px solid transparent;
+                    position: absolute;
+                    bottom: 0px;
+                    right: 44%;
+                    transform: translateY(99%);
+                    opacity: 1;
+                    border-right: 11px solid transparent;
+                }
+
+
+        .nav-tabs li .nav-link,
+        .nav-tabs li .nav-link:hover {
+            background: #ffffff;
+        }
+
+        .tabs-center .nav-tabs > li {
+            display: inline-block;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body data-plugin-page-transition>
+    <div class="body">
+
+
+        <div role="main" class="main">
+
+            <header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 164, 'stickySetTop': '-192px', 'stickyChangeLogo': false}">
+                <div class="header-body border-0">
+                    <div class="header-top header-top-default border-bottom-0">
+                        <div class="container">
+                            <div class="header-row">
+                                <div class="header-column justify-content-start">
+                                    <div class="header-row">
+                                        <a id="LnkAuthorizedLogin" class="badge badge-danger" href="/home/AuthorityLogin">
+                                            University Authority Login
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="section section-default border-0 mb-0 mt-0"
+                     style="background: url('../WebAssets/img/background_bg.jpg'); background-size: cover; opacity: 1; height: 100vh;"
+                     image-overlay="8">
+                <div class="container">
+                    <div class="upper-part text-center">
+                        <h2 class="head-title-eng">GRIEVANCE REDRESSAL DASHBOARD</h2>
+                        <h3 class="head-title-hindi">(शिकायत निवारण प्रक्रिया डैशबोर्ड)</h3>
+                        <a href="https://mgkvp.ac.in/" class="btn btn-primary">Back to home</a>
+                    </div>
+                </div>
+                <section class="pt-20">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <div class="inner-box">
+                                                <div class="icon-box">
+                                                    <i aria-hidden="true" class="fa fa-file-text"></i>
+                                                </div>
+                                                <h3 class="mt-2">
+                                                    <a href="/home/StudentGrievance" class="fbold" target="_blank">
+                                                        Grievance
+                                                        Form
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <p class="text-center text-white">Click here to submit your grievance.</p>
+                                            <div class="btn-box">
+                                                <a href="/home/StudentGrievance"
+                                                   class="btn btn-light btn-modern text-color-dark btn-sm">
+                                                    Submit
+                                                    Grievance
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <div class="inner-box">
+                                                <div class="icon-box">
+                                                    <i aria-hidden="true" class="fa fa-file-text"></i>
+                                                </div>
+                                                <h3 class="mt-2">
+                                                    <a href="/home/ComplainetStatus" class="fbold" target="_blank">
+                                                        GRIEVANCE
+                                                        CURRENT
+                                                        STATUS
+                                                    </a>
+                                                </h3>
+
+                                            </div>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <p class="text-center text-white">
+                                                Click here to view status of your
+                                                grievance.
+                                            </p>
+                                            <div class="btn-box">
+                                                <a href="/home/ComplainetStatus"
+                                                   class="btn btn-light btn-modern text-color-dark btn-sm">
+                                                    View
+                                                    Status
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+            </section>
+
+        </div>
+
+    </div>
+    <!-- Vendor -->
+    <script src="~/WebAssets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/WebAssets/vendor/jquery.appear/jquery.appear.min.js"></script>
+    <script src="~/WebAssets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="~/WebAssets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/WebAssets/vendor/lazysizes/lazysizes.min.js"></script>
+    <script src="~/WebAssets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="~/WebAssets/js/theme.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="~/WebAssets/js/custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="~/WebAssets/js/theme.init.js"></script>
+
+    <script src="~/WebAssets/js/jquery.easy-ticker.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var myET = $('.myTicker').easyTicker({
+                direction: 'up',
+                easing: 'swing',
+                speed: 'slow',
+                interval: 2000,
+                height: 'auto',
+                visible: 1,
+                mousePause: true,
+                autoplay: true,
+                controls: {
+                    up: '.up',
+                    down: '.down',
+                    toggle: '.toggle',
+                    stopText: 'Stop !!!'
+                },
+                callbacks: {
+                    before: function (ul, li) {
+                        console.log('before', this, ul, li);
+                        $(li).css('color', 'red');
+                    },
+                    after: function (ul, li) {
+                        console.log('after', this, ul, li);
+                    },
+                    finish: function (a) {
+                        console.log('finish', this, a);
+                    }
+                }
+            }).data('easyTicker');
+            var ticker3 = $('.myTicker3').easyTicker().data('easyTicker');
+            $('.up3').click(function () {
+                ticker3.up();
+            });
+        });
+        $(document).ready(function () {
+            $("#accordian a").click(function () {
+                var link = $(this);
+                var closest_ul = link.closest("ul");
+                var parallel_active_links = closest_ul.find(".active")
+                var closest_li = link.closest("li");
+                var link_status = closest_li.hasClass("active");
+                var count = 0;
+
+                closest_ul.find("ul").slideUp(function () {
+                    if (++count == closest_ul.find("ul").length)
+                        parallel_active_links.removeClass("active");
+                });
+
+                if (!link_status) {
+                    closest_li.children("ul").slideDown();
+                    closest_li.addClass("active");
+                }
+            })
+        })
+    </script>
+</body>
+</html>

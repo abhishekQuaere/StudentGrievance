@@ -1,0 +1,239 @@
+.main-body {
+	margin: 10px 0;
+	background: #fff;
+	border: solid 1px #AEAEAE;
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+	padding-bottom: 10px;
+}
+.main-body .header {
+	border-bottom: solid 1px #AEAEAE;
+	padding: 10px 0 5px 0;
+}
+.main-body .header img.logo {
+	height: 75px;
+}
+.main-body .header .name-eng {
+	color: navy;
+	font-size: 20px;
+	font-weight: bold;
+}
+.main-body .header .name-hin {
+	color: rgb(197, 0, 0);
+	font-size: 20px;
+	font-weight: bold;
+}
+.main-body .header .univ-type {
+	font-size: 14px;
+	font-weight: bold;
+}
+.pg-button {
+	border: solid 1px black;
+	box-shadow: 2px 2px 2px #000000;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+	border-radius: 5px;
+	padding: 10px 0;
+}
+.pg-button:hover {
+	background: rgb(255, 255, 211);
+	border-color: red;
+	box-shadow: 2px 2px 2px #f00;
+	box-shadow: 2px 2px 2px rgba(255, 0, 0, .4);
+}
+
+/*Responsive Screen Size*/
+@media screen and (min-width: 351px) and (max-width: 1081px) {
+.main-body .header img.logo {
+	height: 50px;
+}
+.main-body .header .name-eng {
+	color: navy;
+	font-size: 16px;
+	font-weight: bold;
+}
+.main-body .header .name-hin {
+	color: rgb(197, 0, 0);
+	font-size: 14px;
+	font-weight: bold;
+}
+.main-body .header .univ-type {
+	font-size: 10px;
+	font-weight: bold;
+}
+}
+ul.docListWindow {
+	list-style-type: none;
+	padding: 0 10px;
+	height: auto;
+	overflow: hidden;
+}
+ul.docListWindow li {
+	display: inline-block;
+	width: 100%;
+	border-bottom: 1px dashed #dcdcdc;
+	margin-bottom: 11px;
+	padding-bottom: 11px;
+}
+ul.docListWindow li .prog-avatar {
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin-right:15px;
+}
+ul.docListWindow li .prog-avatar img {
+	width: 100%;
+}
+.bg-login {
+	background-color: rgb(255 255 255 / 80%);
+	border: 5px solid #fff;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 20px;
+	box-shadow: 0px 12px 16px rgb(0 0 0 / 21%);
+}
+.loginWrap {
+	width: 100%;
+	max-width: 400px;
+	margin: 0px auto;
+}
+.login-logo {
+	font-size: 26px;
+	font-weight: 300;
+	margin-bottom: 0.9rem;
+	text-align: center;
+}
+b, strong {
+	font-weight: 500;
+}
+.btn-custom {
+	background: #3a9437;
+	color: #fff;
+}
+.btn-custom:hover {
+	background: #fff;
+	border: 1px solid #33338b;
+	color: #33338b;
+}
+.footer .col-md-12 {
+	font-size: 12px;
+}
+.details {
+	float: left;
+	width: 71%;
+	line-height: 18px;
+}
+
+.tab-content {
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.04);
+	background-color: #FFF;
+	border: 1px solid #EEE;
+	border-top: 0;
+	padding: 15px;
+}
+
+.tab-content > .active{
+	display: block;
+}
+
+.myTicker3 li{
+	list-style: none;
+}
+
+.newsGroup {
+	clear: both;
+	padding: 10px;
+	border-bottom: 1px solid #d8d8d8;
+	width: 100%;
+}
+
+.newsData {
+	width: calc(100% - 85px);
+	display: inline-block;
+	float: left;
+}
+
+	.newsData a {
+		color: #000;
+	}
+
+.newsDate {
+	display: inline-block;
+	width: 70px;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	float: left;
+	text-align: center;
+	margin-right: 10px;
+	border-radius: 4px;
+	color: #00436a;
+	background: #fff;
+	margin-top: 6px;
+	border: 1px solid #00436a;
+	line-height: 18px;
+}
+
+	.newsDate span {
+		display: block;
+		width: 100%;
+		font-size: 18px;
+		font-weight: normal;
+		text-transform: none;
+		color: #fff;
+		border-radius: 0 0 3px 3px;
+		background: #00436a;
+		padding: 5px 0px;
+	}
+
+
+.adminofficer {
+	border-radius: 0; 
+	margin-bottom: 15px;
+	background: #ffffff; 
+	border-right: 1px solid #f3f3f3;
+}
+	.adminofficer img {
+		float: left;
+		height: auto;
+		min-height: 100px;
+		margin-right: 0px;
+		border-radius: 10px;
+		border: 1px solid #e5e5e5;
+		padding: 2px;
+		width: 100%;
+		max-width: 140px;
+	}
+.faculityName {
+	font-size: 16px;
+	font-weight: 600;
+	color:#333;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	color: #495057;
+	background-color: #fff;
+	border-color: #eb9807 #dbdbdb #fff;
+	border-top: 2px solid #eb9807;
+}
+.nav-tabs .nav-link {
+	border: 1px solid transparent;
+	border-top-left-radius: 0.25rem;
+	border-top-right-radius: 0.25rem;
+	background: #efefef;
+	margin-right: 2px;
+	color: #051272ee;
+}
+.pb20{padding-bottom:20px;}
+.dataTables_info, .dataTables_length {
+	display: inline-block;
+	padding: 0 10px;
+}
+.dataTables_wrapper .dataTables_paginate {
+	float: right;
+	text-align: right;
+	padding-top: 0.25em;
+	width: 100%;
+	margin: 0 10px 10px;
+}

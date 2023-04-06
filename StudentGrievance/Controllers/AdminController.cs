@@ -30,5 +30,12 @@ namespace StudentGrievance.Controllers
             return Json(res, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult GreivanceList()
+        {
+            Admin model = new Admin();
+            model.lst = adminDB.GetAllGrivance<Admin>(sm.DeptId);
+            return View(model);
+        }
+
     }
 }

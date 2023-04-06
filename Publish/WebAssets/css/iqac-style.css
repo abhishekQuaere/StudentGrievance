@@ -1,0 +1,404 @@
+﻿/*--
+	Theme Name: Universe
+	Theme URI: xxx
+	Author: Esmet Hajrizi
+	Author URI: www.esmeth.com
+	Description: College Education Responsive Template
+	Version: 1.0
+	License URI: http://
+	Tags:
+--*/
+
+@import "misc.css";
+@import "main.css";
+@import "color-scheme.css";
+@import "responsive.css";
+
+body {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.widget-main, .widget-item, .main-slideshow {
+    box-shadow: 0 0 8px rgba(0,0,0, .1);
+}
+
+.header-top {
+    display: block;
+    background: #211d1e;
+}
+
+    .header-top ul.follow-us {
+        display: block;
+        padding-top: 8px;
+        float: left;
+    }
+
+        .header-top ul.follow-us li {
+            display: inline-block;
+            padding-right: 20px;
+            font-size: 18px;
+        }
+
+            .header-top ul.follow-us li a {
+                color: #e1e3e4;
+            }
+
+    .header-top .right-block {
+        display: block;
+        float: right;
+    }
+
+    .header-top ul.top-nav {
+        display: block;
+        padding-top: 8px;
+        padding-right: 10px;
+        float: left;
+    }
+
+        .header-top ul.top-nav li {
+            display: block;
+            padding: 0 13px;
+            float: left;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+            .header-top ul.top-nav li a {
+                color: #E1E3E4;
+            }
+
+.main-menu a:hover {
+    background: #A7D9FF;
+    color: #003a6a !important;
+}
+
+.main-menu a.home {
+    color: rgb(255, 161, 161);
+    font-weight: bold;
+}
+
+    .main-menu a.home:hover {
+        background: rgb(255, 161, 161);
+        color: maroon;
+    }
+
+.namedept {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 35px;
+}
+
+.nameeng {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8ab5d6;
+    line-height: 30px;
+}
+
+.namefaculty {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8ab5d6;
+    line-height: 30px;
+}
+
+.namehin {
+    font-size: 25px;
+    color: #8ab5d6;
+    line-height: 40px;
+}
+
+.mainlogo {
+    height: 100px;
+}
+
+.nav-bar-main {
+    background: #004884;
+    border-top: solid 1px #00569d;
+}
+
+ul.follow-us {
+    margin-bottom: 0;
+}
+
+.main-navigation {
+    border-top: none;
+}
+
+.main-menu a {
+    padding: 5px 20px;
+}
+
+.prof-thumb img {
+    border: solid 1px #3D3D3D;
+    border-radius: 8px;
+}
+
+.prof-list-item:hover .prof-details * {
+    color: rgb(0, 69, 187);
+}
+
+.prof-list-item:hover .prof-thumb img {
+    border: solid 2px rgb(0, 69, 187);
+}
+
+.deptname {
+    background: #FECD0B;
+    padding: 10px 0;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #f00;
+}
+
+.menu-toggle-btn {
+    background: green;
+    color: #fff;
+}
+
+.page-title {
+    background: #FFF9C4;
+    box-shadow: 0 0 8px rgba(0,0,0, .1);
+    text-align: center;
+    padding: 10px 0;
+}
+
+    .page-title h3 {
+        padding: 0;
+        margin: 0;
+        font-weight: bold;
+        color: rgb(162, 4, 4);
+    }
+
+.widget-item ul li {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+ul.description li {
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+    ul.description li ul li {
+        margin-bottom: 0;
+    }
+
+.header-top ul.follow-us li a:hover {
+    color: #fff;
+}
+
+.header-top ul.follow-us li a.twitter:hover {
+    color: #37B1E1;
+}
+
+.header-top ul.follow-us li a.facebook:hover {
+    color: #4B69B0;
+}
+
+.header-top ul.follow-us li a.youtube:hover {
+    color: #E83F3A;
+}
+
+.header-top ul.follow-us li a.instagram:hover {
+    color: #9E4292;
+}
+
+.header-top ul.follow-us li a.linkedin:hover {
+    color: #0678B6;
+}
+
+.top-login {
+    color: rgb(255, 105, 105) !important;
+}
+
+    .top-login:hover {
+        color: rgb(255, 240, 105) !important;
+    }
+
+div.menu-block a {
+    display: block;
+    width: 100%;
+    height: 130px;
+    text-align: center;
+    position: relative;
+    margin: 15px 0;
+}
+
+    div.menu-block a div.icon {
+        display: block;
+        height: 90px;
+        line-height: 90px;
+        font-size: 75px;
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    div.menu-block a div.title {
+        display: block;
+        height: 40px;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: bold;
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+    }
+
+.box-red, .box-green, .box-blue, .box-yellow {
+    color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .3)
+}
+
+    .box-red:hover, .box-green:hover, .box-blue:hover, .box-yellow:hover {
+        color: #000;
+    }
+
+.box-red {
+    background: #c00;
+}
+
+    .box-red:hover {
+        background: #f44;
+    }
+
+.box-green {
+    background: #007E33;
+}
+
+    .box-green:hover {
+        background: #00C851
+    }
+
+.box-blue {
+    background: #0d47a1;
+}
+
+    .box-blue:hover {
+        background: #4285F4;
+    }
+
+.box-yellow {
+    background: #f80;
+}
+
+    .box-yellow:hover {
+        background: #fb3;
+    }
+
+/*.box-red:hover, .box-green:hover, .box-blue:hover {
+    background: #f80;
+    color: #fff;
+}*/
+
+@media(max-width: 1000px) {
+    .mainlogo {
+        height: 45px;
+    }
+
+    .nameeng {
+        font-size: 9px;
+        line-height: 12px;
+    }
+
+    .namehin {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .namedept {
+        font-size: 16px;
+        line-height: 18px;
+        padding: 2px 0;
+    }
+
+    .namefaculty {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .flexslider {
+        height: 185px;
+    }
+
+    .page-title h3 {
+        font-size: 16px;
+    }
+
+    div.menu-block a div.title {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .main_menu a, .main_menu li ul li:before {
+        color: #fff;
+    }
+
+    .main_menu li:not(:first-child), .main_menu li ul li {
+        border-top-color: #8ab5d6;
+    }
+}
+
+.member_box {
+    box-shadow: 3px 0px 10px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    padding: 8px 8px;
+}
+
+.font800 {
+    font-weight: 800
+}
+
+.professor_img {
+    width: 10%;
+    border: 2px solid black;
+}
+
+.marg_top40 {
+    margin: 40px 0 0 0;
+}
+
+.more {
+    margin: 4px 0 0 0;
+    float: right;
+    font-weight: bold;
+}
+
+.officer_holder {
+    border: solid 2px rgb(76, 76, 76);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+    background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+}
+
+    .officer_holder p {
+        color: #5C5C5C;
+        font-size: .9em;
+        margin: 0px;
+    }
+
+        .officer_holder p a {
+            color: rgb(3, 62, 115);
+        }
+
+    .officer_holder img {
+        float: left;
+        width: 140px;
+        height: 180px;
+        margin-right: 10px;
+        border: solid 2px gray;
+        border-radius: 8px;
+    }
